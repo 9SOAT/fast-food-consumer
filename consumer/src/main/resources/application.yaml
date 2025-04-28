@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: fast-food
+  main:
+    lazy-initialization: true
+  jmx:
+    enabled: false
+  mvc:
+    problem-details:
+      enabled: true
+    jackson:
+      default-property-inclusion: non_null
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+
+aws:
+  dynamodb:
+    endpoint: http://localhost:8000
+    region: us-east-1
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
