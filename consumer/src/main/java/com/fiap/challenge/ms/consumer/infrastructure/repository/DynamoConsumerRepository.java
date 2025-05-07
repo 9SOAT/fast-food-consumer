@@ -63,7 +63,6 @@ public class DynamoConsumerRepository implements ConsumerRepository {
     @Override
     public Boolean existsById(Long id) {
         // Dynamo não tem busca direta por "id" se não for a chave primária.
-        // Teria que fazer um SCAN (não é eficiente para produção).
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
         List<ConsumerEntity> consumers = dynamoDBMapper.scan(ConsumerEntity.class, scanExpression);
         return consumers.stream().anyMatch(c -> c.getId().equals(id));
@@ -71,7 +70,6 @@ public class DynamoConsumerRepository implements ConsumerRepository {
 
     @Override
     public Optional<Consumer> findById(Long id) {
-        // Mesma observação: SCAN
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
         List<ConsumerEntity> consumers = dynamoDBMapper.scan(ConsumerEntity.class, scanExpression);
         return consumers.stream()
