@@ -2,7 +2,7 @@
 
 **Consumer Microservice** é um serviço desenvolvido com **Java 21** e **Spring Boot** e faz parte da Fase 4 da Postech SOAT9 da FIAP. O serviço permite:
 
-- Criar consumidores
+- Criar consumidores 
 - Consultar consumidores por CPF
 - Listar consumidores com paginação
 - Persistir dados em **AWS DynamoDB**
