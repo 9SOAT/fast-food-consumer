@@ -24,7 +24,7 @@ class ViewMapperTest {
 
         assertThat(view).isNotNull();
         assertThat(view.id()).isEqualTo(1L);
-        assertThat(view.name()).isEqualTo("joão");
+        assertThat(view.name()).isEqualTo("João");
         assertThat(view.email()).isEqualTo("joao@example.com");
         assertThat(view.cpf()).isEqualTo("12345678900");
     }
