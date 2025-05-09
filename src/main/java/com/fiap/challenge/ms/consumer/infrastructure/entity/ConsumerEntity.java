@@ -16,9 +16,6 @@ public class ConsumerEntity {
     @DynamoDBHashKey(attributeName = "cpf")
     private String cpf;
 
-    @DynamoDBAttribute(attributeName = "id")
-    private Long id;
-
     @DynamoDBAttribute(attributeName = "name")
     private String name;
 

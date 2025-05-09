@@ -15,13 +15,20 @@ public class DynamoDBConfig {
         return new DynamoDBMapper(amazonDynamoDB);
     }
 
-    @Bean
+    /*@Bean
     public AmazonDynamoDB amazonDynamoDB() {
         return AmazonDynamoDBClientBuilder.standard()
                 .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
                         "http://localhost:8000",
                         "us-east-1"
                 ))
+                .build();
+    }*/
+
+    @Bean
+    public AmazonDynamoDB amazonDynamoDB() {
+        return AmazonDynamoDBClientBuilder.standard()
+                .withRegion("us-east-1")
                 .build();
     }
 }

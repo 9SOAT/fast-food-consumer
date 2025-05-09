@@ -17,7 +17,6 @@ public class EntityMapper {
         }
 
         return ConsumerEntity.builder()
-                .id(consumer.getId())
                 .name(consumer.getName())
                 .email(consumer.getEmail())
                 .cpf(consumer.getCpf())
@@ -31,7 +30,6 @@ public class EntityMapper {
 
         return Consumer.builder()
                 .cpf(consumerEntity.getCpf())
-                .id(consumerEntity.getId())
                 .name(consumerEntity.getName())
                 .email(consumerEntity.getEmail())
                 .build();

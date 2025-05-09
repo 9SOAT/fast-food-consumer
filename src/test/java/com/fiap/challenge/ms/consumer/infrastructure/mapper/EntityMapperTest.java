@@ -13,7 +13,6 @@ class EntityMapperTest {
     @Test
     void shouldMapConsumerToConsumerEntity() {
         Consumer consumer = Consumer.builder()
-                .id(1L)
                 .name("Maria")
                 .email("maria@example.com")
                 .cpf("98765432100")
@@ -22,7 +21,6 @@ class EntityMapperTest {
         ConsumerEntity entity = entityMapper.toConsumerEntity(consumer);
 
         assertThat(entity).isNotNull();
-        assertThat(entity.getId()).isEqualTo(1L);
         assertThat(entity.getName()).isEqualTo("Maria");
         assertThat(entity.getEmail()).isEqualTo("maria@example.com");
         assertThat(entity.getCpf()).isEqualTo("98765432100");
@@ -37,7 +35,6 @@ class EntityMapperTest {
     @Test
     void shouldMapConsumerEntityToConsumer() {
         ConsumerEntity entity = ConsumerEntity.builder()
-                .id(1L)
                 .name("Carlos")
                 .email("carlos@example.com")
                 .cpf("11223344556")
@@ -46,7 +43,6 @@ class EntityMapperTest {
         Consumer consumer = entityMapper.toConsumer(entity);
 
         assertThat(consumer).isNotNull();
-        assertThat(consumer.getId()).isEqualTo(1L);
         assertThat(consumer.getName()).isEqualTo("Carlos");
         assertThat(consumer.getEmail()).isEqualTo("carlos@example.com");
         assertThat(consumer.getCpf()).isEqualTo("11223344556");

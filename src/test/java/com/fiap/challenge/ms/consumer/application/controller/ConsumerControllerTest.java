@@ -36,8 +36,8 @@ class ConsumerControllerTest {
     @Test
     void shouldGetConsumerByCpf() {
         String cpf = "12345678900";
-        Consumer consumer = Consumer.builder().cpf(cpf).id(1L).name("João").email("joao@example.com").build();
-        ConsumerView consumerView = ConsumerView.builder().cpf(cpf).id(1L).name("João").email("joao@example.com").build();
+        Consumer consumer = Consumer.builder().cpf(cpf).name("João").email("joao@example.com").build();
+        ConsumerView consumerView = ConsumerView.builder().cpf(cpf).name("João").email("joao@example.com").build();
 
         when(consumerService.findByCpf(cpf)).thenReturn(consumer);
         when(viewMapper.toConsumerView(consumer)).thenReturn(consumerView);
@@ -55,8 +55,8 @@ class ConsumerControllerTest {
     void shouldGetAllConsumers() {
         int page = 1;
         int size = 10;
-        Consumer consumer = Consumer.builder().cpf("12345678900").id(1L).name("João").email("joao@example.com").build();
-        ConsumerView consumerView = ConsumerView.builder().cpf("12345678900").id(1L).name("João").email("joao@example.com").build();
+        Consumer consumer = Consumer.builder().cpf("12345678900").name("João").email("joao@example.com").build();
+        ConsumerView consumerView = ConsumerView.builder().cpf("12345678900").name("João").email("joao@example.com").build();
 
         PageResult<Consumer> pageResult = PageResult.<Consumer>builder()
                 .content(List.of(consumer))
@@ -83,8 +83,8 @@ class ConsumerControllerTest {
     void shouldCreateConsumer() {
         ConsumerMutation mutation = new ConsumerMutation("João", "joao@example.com", "12345678900");
         Consumer consumer = Consumer.builder().cpf(mutation.cpf()).name(mutation.name()).email(mutation.email()).build();
-        Consumer savedConsumer = Consumer.builder().cpf(mutation.cpf()).id(1L).name(mutation.name()).email(mutation.email()).build();
-        ConsumerView consumerView = ConsumerView.builder().cpf(mutation.cpf()).id(1L).name(mutation.name()).email(mutation.email()).build();
+        Consumer savedConsumer = Consumer.builder().cpf(mutation.cpf()).name(mutation.name()).email(mutation.email()).build();
+        ConsumerView consumerView = ConsumerView.builder().cpf(mutation.cpf()).name(mutation.name()).email(mutation.email()).build();
 
         when(viewMapper.toConsumer(mutation)).thenReturn(consumer);
         when(consumerService.create(consumer)).thenReturn(savedConsumer);

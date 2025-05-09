@@ -40,14 +40,12 @@ class DynamoConsumerRepositoryTest {
     @BeforeEach
     void setUp() {
         entity = ConsumerEntity.builder()
-                .id(1L)
                 .name("João")
                 .email("joao@example.com")
                 .cpf("12345678900")
                 .build();
 
         consumer = Consumer.builder()
-                .id(1L)
                 .name("João")
                 .email("joao@example.com")
                 .cpf("12345678900")

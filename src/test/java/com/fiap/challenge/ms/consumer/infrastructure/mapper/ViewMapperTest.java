@@ -14,7 +14,6 @@ class ViewMapperTest {
     @Test
     void shouldMapConsumerToConsumerView() {
         Consumer consumer = Consumer.builder()
-                .id(1L)
                 .name("João")
                 .email("joao@example.com")
                 .cpf("12345678900")
@@ -23,7 +22,6 @@ class ViewMapperTest {
         ConsumerView view = viewMapper.toConsumerView(consumer);
 
         assertThat(view).isNotNull();
-        assertThat(view.id()).isEqualTo(1L);
         assertThat(view.name()).isEqualTo("João");
         assertThat(view.email()).isEqualTo("joao@example.com");
         assertThat(view.cpf()).isEqualTo("12345678900");

@@ -31,7 +31,6 @@ class DomainConsumerServiceTest {
     @BeforeEach
     void setup() {
         consumer = Consumer.builder()
-                .id(1L)
                 .name("João")
                 .email("joao@example.com")
                 .cpf("12345678900")
@@ -65,7 +64,6 @@ class DomainConsumerServiceTest {
         Consumer result = domainConsumerService.create(consumer);
 
         assertThat(result).isNotNull();
-        assertThat(result.getId()).isEqualTo(1L);
         verify(consumerRepository).save(consumer);
     }
 

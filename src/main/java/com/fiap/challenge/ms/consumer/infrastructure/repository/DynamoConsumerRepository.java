@@ -60,21 +60,4 @@ public class DynamoConsumerRepository implements ConsumerRepository {
                 .build();
     }
 
-    @Override
-    public Boolean existsById(Long id) {
-        // Dynamo não tem busca direta por "id" se não for a chave primária.
-        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
-        List<ConsumerEntity> consumers = dynamoDBMapper.scan(ConsumerEntity.class, scanExpression);
-        return consumers.stream().anyMatch(c -> c.getId().equals(id));
-    }
-
-    @Override
-    public Optional<Consumer> findById(Long id) {
-        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
-        List<ConsumerEntity> consumers = dynamoDBMapper.scan(ConsumerEntity.class, scanExpression);
-        return consumers.stream()
-                .filter(c -> c.getId().equals(id))
-                .findFirst()
-                .map(entityMapper::toConsumer);
-    }
 }

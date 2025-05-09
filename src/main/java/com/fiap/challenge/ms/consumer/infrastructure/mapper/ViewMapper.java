@@ -16,7 +16,6 @@ public class ViewMapper {
         }
 
         return ConsumerView.builder()
-                .id(consumer.getId())
                 .name(consumer.getName())
                 .email(consumer.getEmail())
                 .cpf(consumer.getCpf())

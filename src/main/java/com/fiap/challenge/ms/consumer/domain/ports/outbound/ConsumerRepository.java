@@ -13,7 +13,4 @@ public interface ConsumerRepository {
 
     public PageResult<Consumer> findAll(int page, int size);
 
-    Boolean existsById(Long id);
-
-    public Optional<Consumer> findById(Long id);
 }

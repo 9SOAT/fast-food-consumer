@@ -8,10 +8,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Consumer {
-    private Long id;
+
+    private String cpf;
     private String name;
     private String email;
-    private String cpf;
 
     public void setCpf(String cpf) {
         this.cpf = cpf.replaceAll("\\D", "");
