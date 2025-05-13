@@ -15,6 +15,7 @@ spec:
       labels:
         app: fast-food-consumer
     spec:
+      serviceAccountName: fast-food-consumer-sa
       dnsPolicy: None
       dnsConfig:
         nameservers:
@@ -52,14 +53,4 @@ spec:
                 configMapKeyRef:
                   name: config-map
                   key: AWS_REGION
-            - name: AWS_ACCESS_KEY_ID
-              valueFrom:
-                secretKeyRef:
-                  name: secrets
-                  key: AWS_ACCESS_KEY_ID
-            - name: AWS_SECRET_ACCESS_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: secrets
-                  key: AWS_SECRET_ACCESS_KEY
       restartPolicy: Always
