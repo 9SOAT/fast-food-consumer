@@ -11,7 +11,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /orders(/|$)(.*)
+          - path: /consumers(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
