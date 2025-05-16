@@ -1,5 +1,8 @@
 # Consumer Microservice
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=9soat_fast-food-consumer&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=9soat_fast-food-consumer)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=9soat_fast-food-consumer&metric=coverage)](https://sonarcloud.io/summary/new_code?id=9soat_fast-food-consumer)
+
 **Consumer Microservice** é um serviço desenvolvido com **Java 21** e **Spring Boot** e faz parte da Fase 4 da Postech SOAT9 da FIAP. O serviço permite:
 
 - Criar consumidores 
