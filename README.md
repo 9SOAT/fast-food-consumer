@@ -94,6 +94,9 @@ O GitHub Actions executa:
 
 ---
 
+## SonarCloud - Cobertura de código/testes
+![image](https://github.com/user-attachments/assets/f390f294-0c0a-4bd0-b2dd-b879dba736ae)
+
 ## Extras
 
 ### DynamoDB Admin UI (opcional)
