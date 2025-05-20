@@ -108,7 +108,6 @@ Para visualizar dados do DynamoDB Local com interface gráfica:
 
 ```bash
 
-
 docker run -p 8001:8001 --env DYNAMO_ENDPOINT=http://host.docker.internal:8000 aaronshaf/dynamodb-admin
 ```
 
